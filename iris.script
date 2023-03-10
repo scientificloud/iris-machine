@@ -1,0 +1,11 @@
+   ;do $System.OBJ.LoadDir("/opt/irisbuild/src","ck",,1)
+
+    zn "%SYS"
+    Do ##class(Security.Users).UnExpireUserPasswords("*")
+
+    set package="csvgen-ui"
+
+    zn "USER"
+    ; use your module here instead of csvgen
+    zpm "install "_package_" -v":1:1
+    halt
